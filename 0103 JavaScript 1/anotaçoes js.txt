@@ -1,3 +1,7 @@
+https://www.youtube.com/watch?v=ITdr-Z27UCE&list=PL9rc_FjKlX39T78CUANwmdta_d1CgUtMt&index=11
+#videos aulas anteriores para adaptar com react
+
+
 Tópicos
 Tudo é objeto
 

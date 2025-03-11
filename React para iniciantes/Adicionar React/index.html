@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React para Iniciantes</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const Compras = () => {
+        // useState é um Hook que define uma variável reativa
+        const [count, setCount] = React.useState(0);
+
+        return (
+          <div>
+            <button onClick={() => setCount(count + 1)}>
+              Comprar: {count}
+            </button>
+            <p>Total: {count}</p>
+            <p>Preço: R$ {count * 250}</p>
+          </div>
+        );
+      };
+      const Button = () => {
+        return <button>Comprar</button>;
+      };
+
+      const MainNav = () => {
+        return (
+          <nav>
+            <a href="#">Link 1</a>
+          </nav>
+        );
+      };
+      const Produtos = () => {
+        const produto1 = "Real Madrid";
+        const produto2 = "Rei da Europa";
+
+        function handleClick(event) {
+          console.log("Comprou:" + event.target.innerText);
+        }
+
+        return (
+          <div>
+            <button onClick={handleClick}>{produto1}</button>
+            <button onClick={handleClick}>{produto2}</button>
+          </div>
+        );
+      };
+
+      function App() {
+        return (
+          <div>
+            <MainNav />
+            <Button />
+            <Produtos />
+            <Compras />
+          </div>
+        );
+      }
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+React para Iniciantes
+JSX
+
+JSX
+JavaScript XML / Extension. Estende a sintaxe do JavaScript, introduzindo elementos como XML que são convertidos em funções de React.
+
+Atributos
+Atributos podem ser passados como no HTML, porém com alguns casos especiais.
+Casos Especiais
+O caso especial mais comum é o atributo class. Pelo fato de class ser uma palavra reservada do JavaScript, o JSX resolveu mudar o nome para evitar conflitos. O correto é className.
+
+camelCase
+Atributos com nomes compostos devem ser utilizados como camelCase. Exemplo: autoplay vira autoPlay.
+
+Expressões / Variáveis
+Expressões e variáveis podem ser colocadas dentro do JSX, utilizando chaves {}.
+
+
+JSX Expressões
+Você pode executar qualquer expressão dentro das chaves {}. Se o resultado da expressão for um número, string ou array de números/strings o resultado irá aparecer na tela. Booleanos (true/false), undefined e null não irão resultar em nada na tela. Objetos irão retornar um erro.
+
+Style
+O style irá receber um objeto com as propriedades do elemento em camelCase.
+
+
+JSX Arrays
+O JSX irá listar cada um dos itens da array. Ele não irá separar ou colocar vírgula, é você que deve modificar a array para o resultado desejado.
+Keys
+O JSX necessita de uma key única para cada elemento da Array. https://reactjs.org/docs/lists-and-keys.html
+Map
+É comum usarmos o map direto na array como uma expressão, retornando um elemento para cada item novo da Array.
+Array de Objetos
+O cenário mais comum é trabalhar com array's de objetos.

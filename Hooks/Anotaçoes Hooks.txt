@@ -1,0 +1,85 @@
+Estado
+O estado de uma aplicação representa as características dela naquele momento. Por exemplo: os dados do usuário foram carregados, 
+o botão está ativo, o usuário está na página de contato e etc.
+
+Hooks
+Os Hooks são funções especiais do React que permitem controlarmos o estado e o ciclo de vida de componentes funcionais.
+Isso antes só era possível com classes.
+
+React.useState
+O useState é uma função que retorna uma Array com 2 valores. O primeiro valor guarda o dado do estado atual, pode ser qualquer tipo de dado como strings, arrays, números, boolean, null, undefined e objetos. O segundo valor é uma função que pode ser utilizada para modificarmos o estado do primeiro valor.
+
+Quando a função de modificação do estado é ativada, todos os componentes que dependerem do estado, serão renderizados novamente e os seus filhos também. É isso que garante a reatividade de componentes funcionais no React.
+
+
+Múltiplos Estados
+Não existem limites para o uso do useState, podemos definir diversos no mesmo componente.
+
+Props
+Podemos passar o estado e a função de modificação como propriedades para outros elementos.
+
+Reatividade
+Não modifique o estado diretamente. Utilize sempre a função de atualização do estado, pois ela que garante a reatividade dos componentes.
+
+Callback
+Podemos passar uma função de callback para atualizar o estado.
+A função de callback recebe um parâmetro que representa o valor anterior e irá modificar o estado para o valor que for retonado na função.
+
+React.StrictMode
+O modo estrito invoca duas vezes a renderização do componente, quando o estado é atualizado.
+Assim é possível identificarmos funções com efeitos coláterais (side effects) e eliminarmos as mesmas.
+Funções com efeitos coláterais são aquelas que modificam estados que estão fora das mesmas.
+
+useEffect
+Todo componente possui um ciclo de vida. Os principais momentos acontecem quando o componente é renderizado, atualizado ou destruído. Com o React.useEffect()
+podemos definir um callback que irá ser executado durante certos momentos do ciclo de vida do componente.
+
+Array de Dependências
+No useEffect podemos definir dois argumentos, o primeiro é a função de callback que será executada,
+o segundo é uma array com uma lista de dependências. A lista de dependências serve para informarmos quando o efeito deve ocorrer.
+
+Dependências Obrigatórias
+Se utilizarmos o valor de um hook ou propriedade dentro de um efeito, ele irá indicar a necessidade de definirmos o mesmo como uma dependência na array.
+
+Componente Montou
+O useEffect será especialmente utilizado quando precisamos definir um efeito que deve ocorrer uma vez apenas, como o fetch de dados no servidor por exemplo.
+
+Múltiplos Efeitos
+Podemos ter diversos useEffect no nosso código. O ideal é separarmos efeitos diferentes em useEffect diferentes.
+
+Antes de Desmontar
+As vezes precisamos executar um efeito sempre que um componente for desmontado. Para isso utilizamos um callback no retorno do callback do efeito.
+
+Produto.js
+
+useRef
+Retorna um objeto com a propriedade current. Esse objeto pode ser utilizado para guardarmos valores que irão persistir durante todo o ciclo de vida do elemento.
+Geralmente usamos o mesmo para nos referirmos a um elemento do DOM, sem precisarmos utilizar o querySelector ou similar.
+
+É comum utilizarmos em formulários, quando precisamos de uma referência do elemento para colocarmos o mesmo em foco.
+
+Referência
+O seu uso não é restrito a elementos do dom. Podemos utilizar também para guardarmos a referência de qualquer valor, como de um setTimeout por exemplo.
+
+React Hooks
+useContext
+
+O contexto irá permitir passarmos dados/estado a todos os componentes, sem a necessidade de utilizar propriedades. 
+Serve principalmente para dodos/estados globais como por exemplo dados do usuário logado.
+UserContext.js
+
+O método Provider deve ser utilizado para envolver todos os elementos que terão acesso aos dados do Context. 
+Provider recebe uma propriedade chamada value, dentro dela que devemos informar os dados do contexto.
+
+O useContext é o hook que deve ser utilizado para consumirmos o contexto e termos assim acesso aos dados de value. 
+Devemos passar o contexto criado como seu agumento.
+
+Exemplo de uso real do context. Podemos passar qualquer coisa no value do context, até estados e funções atualizadoras do useState.
+
+
+Custom Hooks
+
+useLocalStorage
+Podemos criar nossos próprios hooks, assim evitamos a repetição de código. 
+Todo custom hook deve começar com a palavra use. 
+Exemplo: useNomeDoHook. Podemos retornar o que quisermos do hook, seja um valor único, uma array ou um objeto.

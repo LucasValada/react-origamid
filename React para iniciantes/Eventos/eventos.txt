@@ -1,0 +1,10 @@
+Eventos
+Podemos atribuir eventos diretamente aos elementos JSX como um atributo. Os eventos são sintáticos,
+ou seja, são criados pelo próprio React porém seguindo as 
+especificações da W3C (e funcionam igualmente nos diversos browsers que o React suporta).
+
+Função Anônima
+É possível executar uma função anônima no evento.
+
+window/document
+Eventos no window/document ou qualquer elemento fora do React, devem ser adicionados com JavaScript normalmente, usando o addEventListener.
